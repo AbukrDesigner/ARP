@@ -1,0 +1,85 @@
+// Styles pour le formulaire d'ajout de fabricant
+
+.form-label {
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+// Styles pour le FileUpload
+::ng-deep {
+  .p-fileupload {
+    .p-fileupload-buttonbar {
+      display: none;
+    }
+
+    .p-fileupload-content {
+      border: 2px dashed #d1d5db;
+      border-radius: 8px;
+      padding: 2rem;
+      background-color: #f9fafb;
+      text-align: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: var(--primary-color);
+        background-color: #f0fdf4;
+      }
+
+      .p-button {
+        background-color: transparent;
+        border: none;
+        color: var(--primary-color);
+        font-weight: 500;
+
+        &:hover {
+          background-color: rgba(31, 109, 80, 0.1);
+        }
+      }
+    }
+  }
+
+  // Styles pour les champs de formulaire
+  .p-inputtext
+  textarea[pTextarea] {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    padding: 0.625rem 0.875rem;
+    // font-size: 0.9rem;
+    transition: all 0.2s ease;
+
+    &:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(31, 109, 80, 0.1);
+    }
+  }
+
+  // Styles pour les boutons
+  .p-button {
+    border-radius: 8px;
+    padding: 0.625rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+
+    &.p-button-success {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+
+      &:hover {
+        background-color: #14532d;
+        border-color: #14532d;
+      }
+    }
+
+    &.p-button-secondary {
+      background-color: #ffffff;
+      border-color: #e5e7eb;
+      color: #4b5563;
+
+      &:hover {
+        background-color: #f9fafb;
+        border-color: #d1d5db;
+      }
+    }
+  }
+}

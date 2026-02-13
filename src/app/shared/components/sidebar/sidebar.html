@@ -1,0 +1,50 @@
+<div class="sidebar d-flex flex-column">
+  <!-- Logo + titre -->
+  <div class="sidebar-header mb-4">
+   <img src="assets/images/logo-arp.svg" alt="">
+    <div class="sidebar-subtitle text-muted small">
+      Plateforme de gestion des réglementations pharmaceutiques
+    </div>
+  </div>
+
+  <!-- Navigation principale -->
+  <nav class="sidebar-nav flex-grow-1" (click)="onNavClick($event)">
+    <ul class="nav flex-column gap-1">
+      <li class="nav-item" *ngFor="let item of items">
+        <a
+          class="nav-link d-flex align-items-center"
+          [routerLink]="item.route"
+          [class.active]="item.isActive"
+        >
+          <i class="{{ item.icon }} me-2"></i>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Pied de sidebar -->
+  <div class="sidebar-footer pt-3 mt-3 border-top">
+    <div class="mb-2">
+      <a class="nav-link d-flex align-items-center px-0" href="#">
+        <i class="bi bi-gear me-2"></i>
+        <span>Paramètres</span>
+      </a>
+    </div>
+    <div class="mb-3">
+      <a class="nav-link d-flex align-items-center px-0" href="#">
+        <i class="bi bi-question-circle me-2"></i>
+        <span>Support</span>
+      </a>
+    </div>
+    <div class="user-card d-flex align-items-center gap-2">
+      <div class="avatar-circle bg-success text-white fw-semibold d-flex align-items-center justify-content-center">
+        {{ authService.getUserInitials() }}
+      </div>
+      <div>
+        <div class="fw-semibold small">{{ authService.getUserFullName() }}</div>
+        <div class="text-muted small">{{ authService.getUserRole() }}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.eye-icon{
+    font-size: 18px;
+    color: var(--subtitle-color);
+    &:hover{
+        background-color: #f5f4f4;
+    }
+}
+.icon-shop{
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+    color: var(--secondary-color);
+}

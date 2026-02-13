@@ -1,0 +1,173 @@
+<div class="row g-3">
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="bg-white rounded-2 p-2">
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <span class="text-primary">Essais actifs</span>
+                <i class="bi bi-people text-primary fs-5"></i>
+            </div>
+            <h5 class="fw-bold pb-3">
+                8
+            </h5>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="bg-white rounded-2 p-2">
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <span class="text-success">Essais actifs</span>
+                <i class="bi bi-people text-success fs-5"></i>
+            </div>
+            <h5 class="fw-bold pb-3">
+                342
+            </h5>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+        <div class="bg-white rounded-2 p-2">
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <span class="text-warning-emphasis">Essais total</span>
+                <i class="bi bi-people text-warning-emphasis fs-5"></i>
+            </div>
+            <h5 class="fw-bold pb-3">
+                3
+            </h5>
+        </div>
+    </div>
+</div>
+
+<div class="py-3">
+    <div class="row g-2 align-items-center justify-content-center">
+        <div class="col-12 col-md-8">
+            <p-inputgroup class="border p-1 rounded">
+                <input class="form-control-lg border-0 rounded-0" pInputText placeholder="Rechercher par reference" />
+                <p-inputgroup-addon class="border-0 rounded-0">
+                    <i class="bi bi-search"></i>
+                </p-inputgroup-addon>
+            </p-inputgroup>
+        </div>
+        <div class="col-12 col-md-2">
+            <p-select
+                class="w-100"
+                [options]="statusOptions"
+                optionLabel="label"
+                optionValue="value"
+                [(ngModel)]="statusFilter"
+                placeholder="Tous les statuts"
+            ></p-select>
+        </div>
+        <div class="col-12 col-md-2">
+            <p-select
+                class="w-100"
+                [options]="typeOptions"
+                optionLabel="label"
+                optionValue="value"
+                [(ngModel)]="typeFilter"
+                placeholder="Tous les types"
+            ></p-select>
+        </div>
+    </div>
+</div>
+<div class="pt-4">
+    <p-tabs value="0">
+        <p-tablist>
+            <p-tab value="0">
+                <p-overlaybadge value="2">
+                    <p class="text-succes">Essais en cours</p>
+                </p-overlaybadge>
+            </p-tab>
+            
+
+            <p-tab value="1">Essais cloturés</p-tab>
+            <p-tab value="2">Essais archivés</p-tab>
+        </p-tablist>
+        <p-tabpanel value="0">
+            <div class="row g-3 mt-4">
+                <div class="col-12 col-md-6">
+                    <div class="bg-white rounded-2 p-3 h-100">
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                               <div class="d-flex flex-row gap-3 align-items-start">
+                                    <div class="d-flex flex-row gap-2 align-items-center justify-content-center">
+                                        <i class="bi bi-shop-window icon-shop"></i>
+                                        <div class="d-flex flex-column">
+                                            <span class="fw-semibold">IPCA LABORATORIES LTD</span> 
+                                            <div class="small text-muted">ID: FAB-001 • Inde</div>
+                                        </div>
+                                    
+                                    </div>
+                                    <span class="fabricant px-2 py-1">Fabricant</span>
+                                    <span class="certified px-2 py-1">Certifieé</span>
+                            </div>
+                            <a href="javascript:(0)" class="text-decoration-none text-primary small">Voir profil</a>
+                        </div>
+                        
+                        <div class="row g-3 py-2 align-items-center">
+                            <div class="col-lg-6">
+                                <div class="d-flex flex-column">
+                                   <small>Contact</small>
+                                    <span class="fw-medium">Mr. Rajesh Kumar</span> 
+                                    <small class="text-muted">+91 22 2652 4444</small>
+                                </div> 
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="d-flex flex-column">
+                                   <small class="text-muted">Email</small>
+                                    <span class="fw-medium">regulatory@ipca.com</span> 
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="py-2 d-flex flex-row gap-3">
+                            <span class="p-2 rounded-2 bg-success-subtle text-success">Voir AMM</span>
+                            <span class="p-2 rounded-2 bg-success-subtle text-success">Historique</span>
+                            <span class="p-2 rounded-2 bg-success-subtle text-success">Documents</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="bg-white rounded-2 p-3 h-100">
+                        <div class="d-flex flex-row align-items-center justify-content-between">
+                            <div class="d-flex flex-row gap-3 align-items-start">
+                                <div class="d-flex flex-row gap-2 align-items-center justify-content-center">
+                                    <i class="bi bi-shop-window icon-shop"></i>
+                                    <div class="d-flex flex-column">
+                                        <span class="fw-semibold">IPCA LABORATORIES LTD</span> 
+                                        <div class="small text-muted">ID: FAB-001 • Inde</div>
+                                    </div>
+                                
+                                </div>
+                                <span class="fabricant px-2 py-1">Fabricant</span>
+                                <span class="certified px-2 py-1">Certifieé</span>
+                        </div>
+                            <a href="javascript:(0)" class="text-decoration-none text-primary small">Voir profil</a>
+                        </div>
+                       
+                        <div class="row g-3 py-2 align-items-center">
+                            <div class="col-lg-3">
+                                <div class="d-flex flex-column">
+                                   <small>Contact</small>
+                                    <span class="fw-medium">Mr. Rajesh Kumar</span> 
+                                    <small class="text-muted">+91 22 2652 4444</small>
+                                </div> 
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="d-flex flex-column">
+                                   <small class="text-muted">Email</small>
+                                    <span class="fw-medium">regulatory@ipca.com</span> 
+                                </div> 
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="py-2 d-flex flex-row gap-3">
+                            <span class="p-2 rounded-2 bg-success-subtle text-success">Voir AMM</span>
+                            <span class="p-2 rounded-2 bg-success-subtle text-success">Historique</span>
+                            <span class="p-2 rounded-2 bg-success-subtle text-success">Documents</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-tabpanel>
+    </p-tabs>
+</div>

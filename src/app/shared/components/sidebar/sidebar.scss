@@ -1,0 +1,74 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.sidebar {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  min-height: 100%;
+}
+
+.sidebar-header img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sidebar-logo .logo-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background-color: rgba(31, 109, 80, 0.1);
+  color: #1f6d50;
+  font-size: 1rem;
+}
+
+.sidebar-subtitle {
+  line-height: 1.4;
+}
+
+.sidebar-nav .nav-link {
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 1.05rem;
+}
+
+.sidebar-nav .nav-link.active,
+.sidebar-nav .nav-link:hover {
+  background-color: #e5f4ef;
+  color: #14532d;
+}
+
+.sidebar-nav .nav-link.active i,
+.sidebar-nav .nav-link:hover i {
+  color: #14532d;
+}
+
+.sidebar-footer .nav-link {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.sidebar-footer .nav-link:hover {
+  color: #111827;
+}
+
+.avatar-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}

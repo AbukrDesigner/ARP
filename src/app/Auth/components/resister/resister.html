@@ -1,0 +1,95 @@
+<div class="auth-page">
+  <div class="auth-header">
+    <h2 class="auth-title text-center">Création de compte</h2>
+    <p class="auth-subtitle text-center">
+      Renseignez vos informations pour accéder à la plateforme.
+    </p>
+  </div>
+
+  <form class="auth-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="firstName" class="field-label">Prénom</label>
+        <input
+          pInputText
+          id="firstName"
+          name="firstName"
+          placeholder="Entrez votre prenom"
+          type="text"
+          [(ngModel)]="model.firstName"
+          required
+        />
+      </div>
+
+      <div class="form-field">
+        <label for="lastName" class="field-label">Nom</label>
+        <input
+          pInputText
+          id="lastName"
+          name="lastName"
+          type="text"
+          placeholder="Entrez votre nom"
+          [(ngModel)]="model.lastName"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label for="email" class="field-label">Adresse email</label>
+      <input
+        pInputText
+        id="email"
+        name="email"
+        placeholder="votre.email@domaine.com"
+        type="email"
+        [(ngModel)]="model.email"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="password" class="field-label">Mot de passe</label>
+      <p-password
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        [feedback]="false"
+        [toggleMask]="true"
+        placeholder="***************"
+        inputStyleClass="w-100"
+        [inputStyle]="{ width: '100%' }"
+        required
+      ></p-password>
+    </div>
+
+    <div class="form-field">
+      <label for="confirmPassword" class="field-label">Confirmer le mot de passe</label>
+      <p-password
+        id="confirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="model.confirmPassword"
+        [feedback]="false"
+        [toggleMask]="true"
+        placeholder="***************"
+        inputStyleClass="w-100"
+        [inputStyle]="{ width: '100%' }"
+        required
+      ></p-password>
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      label="Créer un compte"
+      class="btn-submit"
+      [disabled]="form.invalid || loading"
+      (click)="NavigateToLogin()"
+    ></button>
+
+    <div class="auth-footer">
+      <span>Vous avez déjà un compte ?</span>
+      <a routerLink="/auth" class="link-primary">Se connecter</a>
+    </div>
+  </form>
+</div>

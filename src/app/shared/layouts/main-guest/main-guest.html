@@ -1,0 +1,69 @@
+<div class="main-guest-layout" [ngClass]="{ 'sidebar-open': sidebarOpen }">
+  <div class="main-guest-sidebar-backdrop" (click)="closeSidebar()" [class.visible]="sidebarOpen" aria-hidden="true"></div>
+  <aside class="main-guest-sidebar">
+    <app-sidebar (navigate)="closeSidebar()"></app-sidebar>
+  </aside>
+
+  <div class="main-guest-main">
+    <header class="main-guest-header">
+      <button
+        type="button"
+        class="main-guest-sidebar-toggle"
+        (click)="toggleSidebar()"
+        aria-label="Ouvrir / fermer le menu"
+      >
+        <i class="bi" [ngClass]="sidebarOpen ? 'bi-x-lg' : 'bi-list'"></i>
+      </button>
+      <div class="main-guest-header-text">
+        <h1 class="mb-1 main-guest-title">{{ pageTitle }}</h1>
+        <p class="mb-0 main-guest-subtitle">
+          {{ pageSubtitle }}
+        </p>
+      </div>
+      <div class="main-guest-header-actions">
+        <button
+          *ngIf="showCreateDemandeButton"
+          type="button"
+          class="btn btn-light btn-md me-2"
+          (click)="goToDemandeCreate()"
+        >
+          <i class="bi bi-plus"></i>
+          Nouvelle demande
+        </button>
+        <button
+          *ngIf="showCreateSignalementButton"
+          type="button"
+          class="btn btn-light btn-md me-2"
+          (click)="goToSignalementCreate()"
+        >
+          <i class="bi bi-plus"></i>
+          Faire un signalement
+        </button>
+        <button
+          *ngIf="showCreateAmmButton"
+          type="button"
+          class="btn btn-light btn-md me-2"
+          (click)="goToFabricantDemandeCreate()"
+        >
+          <i class="bi bi-plus"></i>
+          Nouvelle demande d'AMM
+        </button>
+        <button
+          *ngIf="showDeclareVariationButton"
+          type="button"
+          class="btn btn-light btn-md"
+          
+        >
+          <i class="bi bi-plus"></i>
+          Déclarer une variation
+        </button>
+      </div>
+    </header>
+
+    <main class="main-guest-content">
+      <div class="container-fluid p-0">
+        <router-outlet />
+      </div>
+    </main>
+  </div>
+</div>

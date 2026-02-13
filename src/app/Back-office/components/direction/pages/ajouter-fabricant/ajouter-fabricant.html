@@ -1,0 +1,147 @@
+<div class="row g-3">
+    <div class="col-12">
+        <div class="bg-white rounded-2 p-4">
+            <h4 class="mb-4 fw-bold">Ajouter un fabricant</h4>
+            
+            <form [formGroup]="fabricantForm">
+                <div class="row g-3">
+                    <!-- Colonne gauche -->
+                    <div class="col-12 col-md-6">
+                        <!-- Nom de l'entreprise -->
+                        <div class="mb-3">
+                            <label for="nomEntreprise" class="form-label fw-medium mb-2">Nom de l'entreprise</label>
+                            <input
+                                pInputText
+                                id="nomEntreprise"
+                                formControlName="nomEntreprise"
+                                placeholder="Nom de l'entreprise"
+                                class="w-100" />
+                        </div>
+
+                        <!-- Type d'activité -->
+                        <div class="mb-3">
+                            <label for="typeActivite" class="form-label fw-medium mb-2">Type d'activité</label>
+                            <p-select 
+                                id="typeActivite"
+                                formControlName="typeActivite"
+                                [options]="typeActiviteOptions"
+                                optionLabel="label"
+                                optionValue="value"
+                                placeholder="type d'activité"
+                                styleClass="w-100">
+                            </p-select>
+                        </div>
+
+                        <!-- Numéro de téléphone -->
+                        <div class="mb-3">
+                            <label for="telephone" class="form-label fw-medium mb-2">Numéro de téléphone</label>
+                            <input
+                                pInputText
+                                id="telephone"
+                                formControlName="telephone"
+                                placeholder="Numéro de téléphone"
+                                class="w-100" />
+                        </div>
+                    </div>
+
+                    <!-- Colonne droite -->
+                    <div class="col-12 col-md-6">
+                        <!-- Numero d'enregistrement -->
+                        <div class="mb-3">
+                            <label for="numeroEnregistrement" class="form-label fw-medium mb-2">Numero d'enregistrement</label>
+                            <input
+                                pInputText
+                                id="numeroEnregistrement"
+                                formControlName="numeroEnregistrement"
+                                placeholder="NINEA/RCCM"
+                                class="w-100" />
+                        </div>
+
+                        <!-- Nom du responsable -->
+                        <div class="mb-3">
+                            <label for="nomResponsable" class="form-label fw-medium mb-2">Nom du responsable</label>
+                            <input
+                                pInputText
+                                id="nomResponsable"
+                                formControlName="nomResponsable"
+                                placeholder="nom du responsable"
+                                class="w-100" />
+                        </div>
+
+                        <!-- Adresse email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-medium mb-2">Adresse email</label>
+                            <input
+                                pInputText
+                                id="email"
+                                formControlName="email"
+                                placeholder="adresse email"
+                                type="email"
+                                class="w-100" />
+                        </div>
+                    </div>
+                     <!-- Adresse complète pleine largeur -->
+                     <div class="col-12">
+                        <div class="mb-3">
+                            <label for="adresse" class="form-label fw-medium mb-2">Adresse complète</label>
+                            <textarea 
+                                id="adresse"
+                                pTextarea
+                                formControlName="adresse"
+                                placeholder="adresse complète"
+                                rows="4"
+                                class="w-100">
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <!-- Section téléchargement de fichier -->
+                    <div class="col-12">
+                        <label class="form-label fw-medium mb-2">Licence d'exploitation</label>
+                        <p-fileupload 
+                            mode="advanced"
+                            [auto]="false"
+                            [multiple]="false"
+                            accept=".png,.jpg,.pdf,.docx,.pptx"
+                            [maxFileSize]="10000000"
+                            (onSelect)="onFileSelect($event)"
+                            (onRemove)="onFileRemove()"
+                            chooseLabel="Cliquez ou glisser un fichier içi"
+                            [showUploadButton]="false"
+                            [showCancelButton]="false"
+                            styleClass="w-100">
+                        </p-fileupload>
+                        <small class="text-muted d-block mt-2">PNG, JPG, PDF, DOCX, PPTX jusqu'à 10MB</small>
+                    </div>
+
+                    <!-- Boutons d'action -->
+                    <div class="col-12">
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <p-button 
+                                label="Annuler" 
+                                severity="secondary"
+                                (onClick)="onCancel()">
+                            </p-button>
+                            <p-button 
+                                label="Enregistrer le fabricant" 
+                                severity="success"
+                                icon="pi pi-arrow-right"
+                                iconPos="right"
+                                (onClick)="onSubmit()">
+                            </p-button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="row g-3">
+    <div class="col-12 col-md-6">
+        <div class="bg-white rounded-2 p-3">
+
+        </div>
+    </div>
+</div>

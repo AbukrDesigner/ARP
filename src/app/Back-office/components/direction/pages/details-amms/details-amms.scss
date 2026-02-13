@@ -1,0 +1,88 @@
+.box{
+    background-color: #F9FAFB;
+}
+//icon de telechargement
+.filebox{
+    background-color: #F9FAFB;
+    .icon-file-danger{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: color-mix(in srgb, var(--danger-color) 10%, transparent);
+        color: var(--danger-color);
+        border-radius: 8px;
+        font-size: x-large;
+    }
+    .icon-file-primary{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+        color: var(--secondary-color);
+        border-radius: 8px;
+        font-size: x-large;
+    }
+    .download-icon{
+        padding: 5;
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover{
+            border-radius: 8px;
+            background-color: #ebebeb;
+        }
+    }
+}
+
+
+// image plein largeur dans la carte de droite
+.product-image {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+// timeline historique
+.timeline {
+    position: relative;
+    padding-left: 1.75rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 2.7rem;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    width: 2px;
+    background-color: #E5E7EB;
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    flex: 1;
+}

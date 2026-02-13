@@ -1,0 +1,53 @@
+<div class="auth-page">
+  <div class="auth-header">
+    <h2 class="auth-title text-center">Réinitialisation</h2>
+    <p class="auth-subtitle text-center">
+      Créez un nouveau mot de passe pour sécuriser votre compte.
+    </p>
+  </div>
+
+  <form class="auth-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="form-field">
+      <label for="password" class="field-label">Nouveau mot de passe</label>
+      <p-password
+        id="password"
+        name="password"
+        [(ngModel)]="model.password"
+        [feedback]="false"
+        [toggleMask]="true"
+        placeholder="***************"
+        inputStyleClass="w-100"
+        [inputStyle]="{ width: '100%' }"
+        required
+      ></p-password>
+    </div>
+
+    <div class="form-field">
+      <label for="confirmPassword" class="field-label">Confirmer le mot de passe</label>
+      <p-password
+        id="confirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="model.confirmPassword"
+        [feedback]="false"
+        [toggleMask]="true"
+        placeholder="***************"
+        inputStyleClass="w-100"
+        [inputStyle]="{ width: '100%' }"
+        required
+      ></p-password>
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      label="Mettre à jour le mot de passe"
+      class="btn-submit"
+      [disabled]="form.invalid || loading"
+      (click)="NavigateToLogin()"
+    ></button>
+
+    <div class="auth-footer">
+      <a routerLink="/auth" class="link-primary">Retour à la connexion</a>
+    </div>
+  </form>
+</div>

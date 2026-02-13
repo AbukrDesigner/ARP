@@ -1,0 +1,95 @@
+<div class="demandes-list">
+  <div class="d-flex align-items-center justify-content-between gap-3 mb-3 flex-wrap">
+    <div class="search-wrap flex-grow-1">
+      <span class="p-input-icon-left w-100">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          class="w-100"
+          placeholder="Recherche"
+          [(ngModel)]="searchValue"
+          (input)="dt.filterGlobal($any($event.target).value, 'contains')" />
+      </span>
+    </div>
+
+    <p-select
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+      [(ngModel)]="selectedStatus"
+      placeholder="Filtrer par statut"
+      styleClass="filter-select"
+      (onChange)="selectedStatus === 'Tous' ? dt.clear() : dt.filter(selectedStatus, 'status', 'equals')">
+    </p-select>
+  </div>
+
+  <div class="table bg-white p-3 rounded">
+    <p-table
+    #dt
+    [value]="demandes"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 20, 50]"
+    [tableStyle]="{ 'min-width': '60rem' }"
+    [globalFilterFields]="['numero', 'type', 'sousType', 'demandeur', 'dateDemande', 'status']"
+    styleClass="p-datatable-sm demandes-table">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 8rem">N° DEMANDE</th>
+        <th>TYPE DE DEMANDE</th>
+        <th>DEMANDEUR</th>
+        <th style="width: 12rem">DATE DE LA DEMANDE</th>
+        <th style="width: 10rem">STATUT</th>
+        <th style="width: 10rem" class="text-end">ACTIONS</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-row>
+      <tr>
+        <td class="fw-semibold">{{ row.numero }}</td>
+        <td>
+          <div class="fw-semibold">{{ row.type }}</div>
+          <small class="text-muted" *ngIf="row.sousType">{{ row.sousType }}</small>
+        </td>
+        <td>{{ row.demandeur }}</td>
+        <td>{{ row.dateDemande }}</td>
+        <td>
+          <p-tag [value]="row.status" [severity]="getStatusSeverity(row.status)"></p-tag>
+        </td>
+        <td class="text-end">
+          <div class="d-inline-flex align-items-center gap-1">
+            <p-button
+              [text]="true"
+              [rounded]="true"
+              icon="bi bi-eye"
+              (onClick)="onView(row)">
+            </p-button>
+            <p-button
+              [text]="true"
+              [rounded]="true"
+              icon="bi bi-pencil"
+              (onClick)="onEdit(row)">
+            </p-button>
+            <p-button
+              [text]="true"
+              [rounded]="true"
+              icon="bi bi-download"
+              (onClick)="onDownload(row)">
+            </p-button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="6" class="text-center py-4 text-muted">
+          Aucune demande trouvée.
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  </div>
+  
+</div>

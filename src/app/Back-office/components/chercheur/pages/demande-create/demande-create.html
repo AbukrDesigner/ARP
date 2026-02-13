@@ -1,0 +1,224 @@
+<form class="row g-3 p-3 mt-2 bg-white rounded-2" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="col-12 col-md-6">
+    <div class="mb-3">
+      <label class="form-label fw-medium">Nom du medicament</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="drugName"
+        class="form-control"
+        placeholder="Nom du medicament"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Dosage</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="dosage"
+        class="form-control"
+        placeholder="dosage"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Conditionnement</label>
+      <input
+        pInputText
+        type="text"
+        formControlName="conditioning"
+        class="form-control"
+        placeholder="Conditionnement"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Classe thérapeutique</label>
+      <p-select
+        [options]="therapeuticClasses"
+        formControlName="therapeuticClass"
+        optionLabel="label"
+        optionValue="value"
+        class="w-100"
+      ></p-select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Prix public</label>
+      <input
+        pInputText
+        type="number"
+        formControlName="publicPrice"
+        class="form-control"
+        placeholder="Prix public"
+      />
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <div class="mb-3">
+      <label class="form-label fw-medium"
+        >DCI (Dénomination Commune Internationale) *</label
+      >
+      <input
+        pInputText
+        type="text"
+        formControlName="dci"
+        class="form-control"
+        placeholder="Numero AMM"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Forme galénique</label>
+      <p-select
+        [options]="galenicForms"
+        formControlName="galenicForm"
+        optionLabel="label"
+        optionValue="value"
+        class="w-100"
+      ></p-select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Voie d'administration</label>
+      <p-select
+        [options]="administrationRoutes"
+        formControlName="administrationRoute"
+        optionLabel="label"
+        optionValue="value"
+        class="w-100"
+      ></p-select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Laboratoire</label>
+      <p-select
+        [options]="laboratories"
+        formControlName="laboratory"
+        optionLabel="label"
+        optionValue="value"
+        class="w-100"
+      ></p-select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label fw-medium">Date de debut</label>
+      <input
+        pInputText
+        type="date"
+        formControlName="startDate"
+        class="form-control"
+        placeholder="Date de debut"
+      />
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label class="form-label fw-medium"
+      >RCP (Résumé des Caractéristiques du Produit) *</label
+    >
+    <div
+      class="file-dropzone"
+      (click)="rcpInput.click()"
+      (dragover)="onFileDragOver($event, 'rcp')"
+      (dragleave)="onFileDragLeave($event, 'rcp')"
+      (drop)="onRcpDrop($event)"
+      [class.file-dropzone--dragover]="isRcpDragOver"
+    >
+      <input
+        #rcpInput
+        type="file"
+        accept=".pdf,.doc,.docx"
+        class="file-dropzone__input"
+        (change)="onRcpChange($event)"
+      />
+      <div class="file-dropzone__content">
+        <i class="bi bi-upload file-dropzone__icon"></i>
+        <p class="file-dropzone__title">
+          Cliquez pour télécharger ou glissez le fichier
+        </p>
+        <p class="file-dropzone__subtitle">PDF, DOC (max. 10MB)</p>
+        <p class="file-dropzone__filename" *ngIf="form.get('rcp')?.value as rcpFile">
+          {{ rcpFile.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label class="form-label fw-medium">Notice patient *</label>
+    <div
+      class="file-dropzone"
+      (click)="noticeInput.click()"
+      (dragover)="onFileDragOver($event, 'notice')"
+      (dragleave)="onFileDragLeave($event, 'notice')"
+      (drop)="onNoticeDrop($event)"
+      [class.file-dropzone--dragover]="isNoticeDragOver"
+    >
+      <input
+        #noticeInput
+        type="file"
+        accept=".pdf,.doc,.docx"
+        class="file-dropzone__input"
+        (change)="onNoticeChange($event)"
+      />
+      <div class="file-dropzone__content">
+        <i class="bi bi-upload file-dropzone__icon"></i>
+        <p class="file-dropzone__title">
+          Cliquez pour télécharger ou glissez le fichier
+        </p>
+        <p class="file-dropzone__subtitle">PDF, DOC (max. 10MB)</p>
+        <p
+          class="file-dropzone__filename"
+          *ngIf="form.get('notice')?.value as noticeFile"
+        >
+          {{ noticeFile.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label class="form-label fw-medium">Image du produit</label>
+    <div
+      class="file-dropzone"
+      (click)="imageInput.click()"
+      (dragover)="onFileDragOver($event, 'image')"
+      (dragleave)="onFileDragLeave($event, 'image')"
+      (drop)="onImageDrop($event)"
+      [class.file-dropzone--dragover]="isImageDragOver"
+    >
+      <input
+        #imageInput
+        type="file"
+        accept=".jpg,.jpeg,.png"
+        class="file-dropzone__input"
+        (change)="onImageChange($event)"
+      />
+      <div class="file-dropzone__content">
+        <i class="bi bi-upload file-dropzone__icon"></i>
+        <p class="file-dropzone__title">
+          Cliquez pour télécharger ou glissez l'image
+        </p>
+        <p class="file-dropzone__subtitle">JPG, PNG (max. 5MB)</p>
+        <p
+          class="file-dropzone__filename"
+          *ngIf="form.get('productImage')?.value as imageFile"
+        >
+          {{ imageFile.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+    <button type="button" class="cancel" (click)="cancel()">
+      Annuler
+    </button>
+    <button type="submit" pButton class="p-button">
+      Soumettre la demande
+    </button>
+  </div>
+</form>

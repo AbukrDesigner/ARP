@@ -1,0 +1,100 @@
+// Logo : taille réduite sur petit écran, normale à partir de md
+.logo-navbar {
+  height: auto;
+  max-width: 100%;
+  width: 120px;
+
+  @media (min-width: 768px) {
+    width: 160px;
+  }
+
+  @media (min-width: 992px) {
+    width: 200px;
+  }
+}
+
+.navbar-top {
+  min-height: 56px;
+  flex-wrap: nowrap;
+}
+
+// Boutons du haut : plus compacts sur mobile
+.navbar-top-actions {
+  .button-text,
+  .button-login {
+    white-space: nowrap;
+  }
+}
+
+.button-text {
+  padding: 6px 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.8rem;
+
+  @media (min-width: 768px) {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+.button-login {
+  padding: 6px 10px;
+  border: 0.5px solid var(--primary-color);
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  margin-left: 4px;
+
+  @media (min-width: 768px) {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+}
+
+// Toggler dans sa propre ligne, nav-items en dessous (pas de chevauchement)
+.navbar-toggler-row {
+  display: none;
+
+  @media (max-width: 991.98px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    flex-shrink: 0;
+  }
+}
+
+.navbar-collapsed-end {
+  display: flex;
+  flex-wrap: nowrap;
+
+  @media (max-width: 991.98px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .navbar-collapse {
+      width: 100%;
+      flex-shrink: 0;
+    }
+  }
+}
+
+// Toggler en blanc sur la navbar verte
+.navbar.bg-success .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #fff;
+
+  .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+  }
+}
+

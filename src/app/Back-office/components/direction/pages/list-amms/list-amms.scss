@@ -1,0 +1,14 @@
+//background-color et couleur de texte pour les th du tableau
+.th-title{
+    background-color: #EEEEEE;
+    color: #111827;
+}
+
+// léger fond au survol des icônes d'actions
+.amm-actions-btn {
+    border-radius: 999px;
+
+    &:hover {
+        background-color: #F3F4F6; // gris très léger
+    }
+}

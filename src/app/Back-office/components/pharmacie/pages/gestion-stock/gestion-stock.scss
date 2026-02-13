@@ -1,0 +1,25 @@
+.icon{
+    font-size: 1rem;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon.sales{
+    background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    color: var(--primary-color);
+}
+.icon.verification{
+    background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+    color: var(--secondary-color);
+}
+.icon.box{
+    background-color: color-mix(in srgb, var(--tertiary-color) 10%, transparent);
+    color: var(--tertiary-color);
+}
+.icon.exclamation{
+    background-color: color-mix(in srgb, var(--danger-color) 10%, transparent);
+    color: var(--danger-color);
+}

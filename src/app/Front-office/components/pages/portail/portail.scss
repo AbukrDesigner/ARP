@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  background-image: url(".../../../../../../../assets/images/medoc-hero.svg");
+  width: 100%;
+  height: calc(100vh - 200px);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in srgb, #000 75%, transparent);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 1.5rem;
+  }
+}
+
+.hero-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+
+  @media (min-width: 576px) {
+    font-size: 2.25rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 2.75rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.hero-title span {
+  color: var(--primary-color);
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+
+  @media (min-width: 576px) {
+    font-size: 1.05rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+
+  @media (min-width: 576px) {
+    flex-direction: row;
+    max-width: none;
+  }
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  white-space: normal;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    color: var(--primary-color);
+}
+.underline{
+    border-bottom: 2px solid var(--primary-color);
+}
+
+//Section pour les acces rapide
+#quickaccess{
+    background-color: white;
+    padding: 24px 24px;
+}
+
+#statistics{
+  background-color: var(--primary-color);
+  padding: 48px 24px;
+}
+
+// Section Teams : cartes image + dégradé blanc vers le haut + texte
+.team-card {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.team-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.team-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.5) 35%, transparent 70%);
+  z-index: 1;
+}
+
+.team-card-content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding: 1.25rem 1rem 1rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.team-card-name {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.team-card-title {
+  font-size: 0.85rem;
+  color: var(--subtitle-color);
+  margin-bottom: 0.35rem;
+}
+
+.team-card-quote {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--text-color);
+  margin: 0;
+}

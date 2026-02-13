@@ -1,0 +1,81 @@
+:host {
+  display: block;
+}
+
+.auth-page {
+  width: 100%;
+}
+
+.auth-header {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+::ng-deep .p-password-input {
+  width: 100%;
+  border-radius: 8px;
+  padding-inline: 1.1rem;
+  height: 2.8rem;
+  font-size: 0.95rem;
+}
+
+.btn-submit {
+  width: 100%;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  border: none;
+  height: 2.9rem;
+  font-weight: 600;
+}
+
+.btn-submit.p-button:disabled {
+  opacity: 0.7;
+}
+
+.auth-footer {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.link-primary {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-primary:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,117 @@
+
+<div class="my-3">
+    <div class="row g-2 align-items-center justify-content-center">
+        <div class="col-12 col-md-8">
+            <p-inputgroup class="border p-1 rounded">
+                <input class="form-control-lg border-0 rounded-0" pInputText placeholder="Rechercher par reference" />
+                <p-inputgroup-addon class="border-0 rounded-0">
+                    <i class="bi bi-search"></i>
+                </p-inputgroup-addon>
+            </p-inputgroup>
+        </div>
+        <div class="col-12 col-md-2">
+            <p-select
+                class="w-100"
+                [options]="statusOptions"
+                optionLabel="label"
+                optionValue="value"
+                [(ngModel)]="statusFilter"
+                placeholder="Tous les statuts"
+            ></p-select>
+        </div>
+        <div class="col-12 col-md-2">
+            <p-select
+                class="w-100"
+                [options]="typeOptions"
+                optionLabel="label"
+                optionValue="value"
+                [(ngModel)]="typeFilter"
+                placeholder="Tous les types"
+            ></p-select>
+        </div>
+    </div>
+</div>
+<div class="card border-0 bg-none mt-4">
+    <p-tabs value="0">
+        <p-tablist>
+            <p-tab value="0">AMM valides</p-tab>
+            <p-tab value="1">AMM retiré</p-tab>
+            <p-tab value="2">AMM expiré</p-tab>
+        </p-tablist>
+        <p-tabpanels>
+            <p-tabpanel value="0">
+                <p-table
+    [value]="amms"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10,20,50]"
+    responsiveLayout="scroll"
+    styleClass="p-datatable-sm"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th class=" th-title">N° AMM</th>
+            <th class=" th-title">MÉDICAMENTS</th>
+            <th class=" th-title">DCI</th>
+            <th class=" th-title">LABORATOIRE</th>
+            <th class=" th-title">CLASSE</th>
+            <th class=" th-title">PRIX</th>
+            <th class=" th-title">STATUT</th>
+            <th class="text-center th-title">ACTIONS</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-row>
+        <tr>
+            <td>{{ row.numero }}</td>
+
+            <td>
+                <div class="fw-semibold text-uppercase">{{ row.medicament }}</div>
+                <div class="text-muted small">{{ row.dateValidite | date:'yyyy-MM-dd' }}</div>
+            </td>
+
+            <td>{{ row.dci }}</td>
+            <td>{{ row.laboratoire }}</td>
+            <td>{{ row.classe }}</td>
+
+            <td>
+                {{ row.prix | number:'1.0-0' }}
+                <span class="ms-1">FCFA</span>
+            </td>
+
+            <td>
+                <p-tag
+                    [value]="row.statut"
+                    styleClass="px-3"
+                    severity="success"
+                ></p-tag>
+            </td>
+
+            <td class="text-center">
+                <button type="button" class="btn btn-sm btn-link text-secondary me-1 amm-actions-btn" (click)="viewDetail(row)">
+                    <i class="bi bi-eye"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-link text-secondary me-1 amm-actions-btn">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-sm btn-link text-secondary amm-actions-btn">
+                    <i class="bi bi-download"></i>
+                </button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+            </p-tabpanel>
+            <p-tabpanel value="1">
+                <p class="m-0">
+                    content here
+                </p>
+            </p-tabpanel>
+            <p-tabpanel value="2">
+                <p class="m-0">
+                    content here
+                </p>
+            </p-tabpanel>
+        </p-tabpanels>
+    </p-tabs>
+</div>

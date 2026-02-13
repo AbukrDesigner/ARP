@@ -1,0 +1,113 @@
+.demandes-create-container {
+  max-width: auto;
+  margin:  auto;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem 2.5rem;
+  // box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.demandes-stepper {
+  .p-stepper-nav {
+    border: none;
+    justify-content: space-between;
+  }
+}
+
+.step-header {
+  margin-bottom: 2rem;
+
+  .step-subtitle {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 1rem 0;
+  }
+
+  .step-progress {
+    width: 100%;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 100px;
+    overflow: hidden;
+
+    .step-progress-bar {
+      width: 33%;
+      height: 100%;
+      background: var(--primary-color);
+
+      &.step-progress-bar-2 {
+        width: 66%;
+      }
+
+      &.step-progress-bar-3 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.step-form {
+  .form-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+  }
+
+  .form-control,
+  .p-dropdown {
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+}
+
+.step-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 2rem;
+
+  .p-button {
+    min-width: 120px;
+    border-radius: 8px;
+  }
+
+  .p-button-text {
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+}
+
+.step-placeholder {
+  padding: 2rem 0;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: #64748b;
+  }
+}
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  
+}
+.icon.checked {
+  color: #10B981;
+  font-size: 3.5rem;
+}

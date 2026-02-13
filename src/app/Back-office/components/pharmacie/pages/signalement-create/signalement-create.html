@@ -1,0 +1,106 @@
+<div class="demandes-create-container bg-white p-4 rounded">
+  <form [formGroup]="signalementForm" class="step-form">
+    <div class="row g-3">
+      <div class="col-12 col-md-6">
+        <label class="form-label">Quel type de problème signalez-vous ?</label>
+        <p-select
+          formControlName="typeProbleme"
+          [options]="typeProblemeOptions"
+          optionLabel="label"
+          optionValue="value"
+          styleClass="w-100"
+          placeholder="Quel type de problème signalez-vous ?"
+        ></p-select>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label class="form-label">Date de naissance</label>
+        <input
+          pInputText
+          type="date"
+          class="form-control"
+          formControlName="dateNaissance"
+          placeholder="Date de naissance"
+        />
+      </div>
+
+      <div class="col-12">
+        <h5 class="my-2">Informations produit (obligatoires)</h5>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label class="form-label">Numéro d'inscription à l'Ordre (pharmacien)</label>
+        <input
+          pInputText
+          type="text"
+          class="form-control"
+          formControlName="numeroOrdrePharmacien"
+          placeholder="Numéro d'inscription à l'Ordre (pharmacien)"
+        />
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label class="form-label">Date d'inscription</label>
+        <input
+          pInputText
+          type="date"
+          class="form-control"
+          formControlName="dateInscription"
+          placeholder="Date d'inscription"
+        />
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label class="form-label">Diplôme obtenu</label>
+        <input
+          pInputText
+          type="text"
+          class="form-control"
+          formControlName="diplomeObtenu"
+          placeholder="Diplôme obtenu"
+        />
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label class="form-label">Année d'obtention</label>
+        <input
+          pInputText
+          type="text"
+          class="form-control"
+          formControlName="anneeObtention"
+          placeholder="Année d'obtention"
+        />
+      </div>
+
+      <div class="col-12">
+        <label class="form-label">Qualité</label>
+        <p-select
+          formControlName="qualite"
+          [options]="qualiteOptions"
+          optionLabel="label"
+          optionValue="value"
+          styleClass="w-100"
+          placeholder="Sélectionnez une qualité"
+        ></p-select>
+      </div>
+    </div>
+
+    <div class="step-actions text-end mt-3 gap-2">
+      <button
+        type="button"
+        pButton
+        class="p-button-text"
+        label="Annuler"
+        (click)="onCancel()"
+      ></button>
+
+      <button
+        type="button"
+        pButton
+        label="Suivant"
+        (click)="onNext()"
+        [disabled]="signalementForm.invalid"
+      ></button>
+    </div>
+  </form>
+</div>

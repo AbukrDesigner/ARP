@@ -1,0 +1,26 @@
+<div class="auth-shell">
+  <!-- Left side (visuel + texte) -->
+  <div class="left-side d-none d-md-flex">
+    <div class="left-side-content">
+      <h1 class="left-side-title">
+        Gestion des règlements pharmaceutiques
+      </h1>
+      <p class="left-side-text">
+        Accédez à vos demandes en toute simplicité. Déposez, suivez et gérez vos autorisations de
+        sortie en un seul endroit, de manière rapide et sécurisée.
+      </p>
+    </div>
+  </div>
+
+  <!-- Right side (logo + formulaire de login) -->
+  <div class="right-side">
+    <div class="auth-card">
+      <div class="auth-logo text-center">
+        <img src="assets/images/logo-arp.svg" alt="logo ARP" class="img-fluid" />
+      </div>
+      <div class="auth-content mt-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

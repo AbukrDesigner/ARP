@@ -1,0 +1,51 @@
+<div class="login-page">
+  <div class="login-header">
+    <h2 class="login-title text-center">CONNEXION</h2>
+  </div>
+
+  <form class="login-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="form-field">
+      <label for="email" class="field-label">Adresse email</label>
+      <input
+        pInputText
+        id="email"
+        name="email"
+        type="email"
+        placeholder="email"
+        [(ngModel)]="credentials.email"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="password" class="field-label">Mot de passe</label>
+      <p-password
+        id="password"
+        name="password"
+        [(ngModel)]="credentials.password"
+        [feedback]="false"
+        [toggleMask]="true"
+        placeholder="***************"
+        inputStyleClass="w-100"
+        [inputStyle]="{ width: '100%' }"
+        required
+      ></p-password>
+      <div class="field-extra">
+        <a routerLink="/auth/forget" class="link-sm">Mot de passe oublié ?</a>
+      </div>
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      label="Se connecter"
+      class="btn-submit"
+      [disabled]="form.invalid || loading"
+    ></button>
+
+    <div class="login-footer">
+      <span>Vous n’avez pas de compte ?</span>
+      <a routerLink="/auth/resister" class="link-primary">Créez un compte</a>
+    </div>
+  </form>
+</div>

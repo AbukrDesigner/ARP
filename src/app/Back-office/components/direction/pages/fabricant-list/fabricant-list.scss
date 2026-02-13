@@ -1,0 +1,28 @@
+.icon-shop{
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 8px;
+    background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+    color: var(--secondary-color);
+}
+.fabricant{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+    color: var(--secondary-color);
+}
+.certified{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    color: var(--primary-color);
+}
