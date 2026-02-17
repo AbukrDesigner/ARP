@@ -196,7 +196,23 @@ export class Sidebar implements OnInit {
     // Section Direction
     if (url.startsWith('/backoffice/direction')) {
       if (item.route === '/backoffice/direction') {
-        return url === '/backoffice/direction' || url === '/backoffice/direction/';
+        return url === '/backoffice/direction' || 
+        url === '/backoffice/direction/';
+      }
+
+      // Gestion des AMM (Direction) : actif sur la liste ET le détail
+      if (item.route === '/backoffice/direction/list-amms') {
+        return (
+          url.includes('/backoffice/direction/list-amms') ||
+          url.includes('/backoffice/direction/detail-amms')
+        );
+      }
+      // Essais clinique : actif sur la liste ET le détail
+      if (item.route === '/backoffice/direction/essai-list') {
+        return (
+          url.includes('/backoffice/direction/essai-list') ||
+          url.includes('/backoffice/direction/essai-detail')
+        );
       }
       return url.startsWith(item.route);
     }

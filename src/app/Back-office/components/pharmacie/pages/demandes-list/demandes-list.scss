@@ -10,18 +10,52 @@
 
 :host ::ng-deep .demandes-table .p-datatable-thead > tr > th {
   background-color: #f5f6fa !important;
-  border: none;
-  font-size: 0.85rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.85rem; // taille "normale" pour desktop
   font-weight: 700;
   color: #2b2f38;
+  white-space: nowrap;
 }
 
 :host ::ng-deep .demandes-table .p-datatable-tbody > tr > td {
-  border: none;
+  border-bottom: 1px solid #eef2f7;
   vertical-align: middle;
+  font-size: 0.9rem;
 }
 
+// Pagination sans bordure
 :host ::ng-deep .demandes-table .p-paginator {
   border: none;
+}
+
+// Version "compacte" uniquement pour les écrans plus petits (PC perso, laptop, etc.)
+@media (max-width: 1199.98px) {
+  :host ::ng-deep .demandes-table .p-datatable-thead > tr > th {
+    font-size: 0.80rem;
+  }
+
+  :host ::ng-deep .demandes-table .p-datatable-tbody > tr > td {
+    font-size: 0.85rem;
+  }
+}
+
+// Sur les grands écrans (desktop), on garde la largeur minimale d'avant
+@media (min-width: 1200px) {
+  :host ::ng-deep .demandes-table .p-datatable-wrapper {
+    min-width: 60rem;
+  }
+}
+
+.action-icon-btn.p-button {
+  color: #6b7280; // gris neutre
+}
+
+:host ::ng-deep .demandes-table .action-icon-btn .p-button-icon,
+:host ::ng-deep .demandes-table .action-icon-btn.p-button {
+  color: #6b7280;
+}
+
+:host ::ng-deep .demandes-table .action-icon-btn.p-button:hover {
+  color: #111827;
 }
 

@@ -3,11 +3,13 @@ import { NgClass, NgIf } from '@angular/common';
 import { Router, RouterOutlet, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Sidebar } from '../../components/sidebar/sidebar';
 import { filter, map } from 'rxjs/operators';
+import { DialogModule } from 'primeng/dialog';
+import { RippleModule } from 'primeng/ripple';
 
 @Component({
   selector: 'app-main-guest',
   standalone: true,
-  imports: [RouterOutlet, Sidebar, NgClass, NgIf],
+  imports: [RouterOutlet, Sidebar, NgClass, NgIf, DialogModule, RippleModule],
   templateUrl: './main-guest.html',
   styleUrl: './main-guest.scss',
 })
@@ -19,6 +21,7 @@ export class MainGuest implements OnInit {
   showCreateSignalementButton = false;
   showCreateAmmButton = false;
   showDeclareVariationButton = false;
+  displayNewDemandeModal = false;
 
   constructor(
     private router: Router,
@@ -89,6 +92,29 @@ export class MainGuest implements OnInit {
     } else {
       this.pageSubtitle = 'Consultez et gérez les données normatives';
     }
+  }
+
+  openNewDemandeModal(): void {
+    this.displayNewDemandeModal = true;
+  }
+
+  closeNewDemandeModal(): void {
+    this.displayNewDemandeModal = false;
+  }
+
+  onDemandeTransfert(): void {
+    this.closeNewDemandeModal();
+    this.goToDemandeCreate();
+  }
+
+  onDemandeAttributionSite(): void {
+    this.closeNewDemandeModal();
+    // TODO: ajouter la navigation vers la demande d'attribution de site d'officine
+  }
+
+  onDemandeVariation(): void {
+    this.closeNewDemandeModal();
+    // TODO: ajouter la navigation vers la demande de variation
   }
 
   goToDemandeCreate(): void {

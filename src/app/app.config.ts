@@ -10,9 +10,15 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     providePrimeNG({
+      // On garde le thème Aura mais on désactive le lien avec le dark mode du système
       theme: {
-          preset: Aura
+        preset: Aura,
+        options: {
+          // Au lieu de 'system', on utilise une classe qu'on ne met jamais :
+          // le thème restera donc toujours en version claire.
+          darkModeSelector: '.app-dark'
+        }
       }
-  })
+    })
   ]
 };

@@ -17,7 +17,7 @@
 
     <!-- MODAL -->
     <p-dialog  [showHeader]="false" [(visible)]="visible" [style]="{ width: '35rem' }">
-        <i class="bi bi-check-circle icon checked mx-auto mb-2 pt-3"></i>
+        <i class="bi bi-check-circle icon checked mx-auto my-2 "></i>
         <h5 class="text-uppercase fw-bold">Produit authentique</h5>
         <div class="py-2">Vous pouvez distribuer ce produit</div>
         <h6 class="text-semibold py-2">Code verifie: 123456789ABC</h6>
@@ -31,9 +31,9 @@
             <span>Verifier le: 11/12/2025 à 14h52</span>
         </div>
         
-        <div class="flex justify-end gap-2">
+        <div class="flex justify-end ">
             <p-button label="Nouveau scan" severity="secondary" (click)="visible = false" />
-            <p-button label="Voir l'historique" (click)="visible = false"  />
+            <p-button label="Voir l'historique" class="ms-2" (click)="visible = false"  />
         </div>
     </p-dialog>
 </div>

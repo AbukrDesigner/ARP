@@ -8,21 +8,25 @@
     background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
     color: var(--secondary-color);
 }
-.fabricant{
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-    background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
-    color: var(--secondary-color);
+
+@media (max-width: 1400px) {
+    .fabricant-header > .d-flex{
+        min-width: 0;
+    }
+
+    .fabricant-name{
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        max-width: 45%;
+    }
+
 }
-.certified{
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100px;
-    background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
-    color: var(--primary-color);
+
+.fabricant-link{
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-left: 0.75rem;
 }

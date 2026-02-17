@@ -2,7 +2,7 @@
     <div class="col-12 col-md-6 col-lg-3">
         <div class="bg-white rounded-2 p-3">
             <div class="d-flex flex-row justify-content-between align-items-center">
-                <div class="fs-medium">Total AMMS</div>
+                <div class="">Total AMMS</div>
                 <i class="bi bi-people text-primary fs-4"></i>
             </div>
             <h4 class="fw-bold">1,247</h4>
@@ -13,9 +13,9 @@
     <!-- ====== -->
 
     <div class="col-12 col-md-6 col-lg-3">
-        <div class="bg-white rounded-2 p-3">
+        <div class="bg-white rounded-2 p-3 ">
             <div class="d-flex flex-row justify-content-between align-items-center">
-                <div class="fs-medium">AMMS en cours de validité</div>
+                <div class="">AMMS validés</div>
                 <i class="bi bi-people text-primary fs-4"></i>
             </div>
             <h4 class="fw-bold">456</h4>
@@ -27,7 +27,7 @@
     <div class="col-12 col-md-6 col-lg-3">
         <div class="bg-white rounded-2 p-3">
             <div class="d-flex flex-row justify-content-between align-items-center">
-                <div class="fs-medium">AMMS Retiré</div>
+                <div class="">AMMS Retiré</div>
                 <i class="bi bi-people text-primary fs-4"></i>
             </div>
             <h4 class="fw-bold">189</h4>
@@ -39,7 +39,7 @@
     <div class="col-12 col-md-6 col-lg-3">
         <div class="bg-white rounded-2 p-3">
             <div class="d-flex flex-row justify-content-between align-items-center">
-                <div class="fs-medium">AMMS Expiré</div>
+                <div class="">AMMS Expiré</div>
                 <i class="bi bi-people text-primary fs-4"></i>
             </div>
             <h4 class="fw-bold">602</h4>
@@ -104,7 +104,7 @@
             <th class=" th-title">CLASSE</th>
             <th class=" th-title">PRIX</th>
             <th class=" th-title">STATUT</th>
-            <th class="text-center th-title">ACTIONS</th>
+            <th class="text-center th-title" style="width: 8rem">ACTIONS</th>
         </tr>
     </ng-template>
 
@@ -113,13 +113,13 @@
             <td>{{ row.numero }}</td>
 
             <td>
-                <div class="fw-semibold text-uppercase">{{ row.medicament }}</div>
+                <div class="fw-medium text-lowercase">{{ row.medicament }}</div>
                 <div class="text-muted small">{{ row.dateValidite | date:'yyyy-MM-dd' }}</div>
             </td>
 
-            <td>{{ row.dci }}</td>
-            <td>{{ row.laboratoire }}</td>
-            <td>{{ row.classe }}</td>
+            <td class=" fw-medium text-lowercase">{{ row.dci }}</td>
+            <td class=" fw-medium text-lowercase">{{ row.laboratoire }}</td>
+            <td class=" fw-medium text-lowercase">{{ row.classe }}</td>
 
             <td>
                 {{ row.prix | number:'1.0-0' }}
@@ -134,16 +134,18 @@
                 ></p-tag>
             </td>
 
-            <td class="text-center">
-                <button type="button" class="btn btn-sm btn-link text-secondary me-1 amm-actions-btn" (click)="viewDetail(row)">
-                    <i class="bi bi-eye"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-link text-secondary me-1 amm-actions-btn">
-                    <i class="bi bi-pencil"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-link text-secondary amm-actions-btn">
-                    <i class="bi bi-download"></i>
-                </button>
+            <td class="text-center align-middle actions-cell">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <button type="button" class="btn btn-sm btn-link text-secondary me-1 amm-actions-btn" (click)="viewDetail(row)">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-link text-secondary me-1 amm-actions-btn">
+                        <i class="bi bi-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-link text-secondary amm-actions-btn">
+                        <i class="bi bi-download"></i>
+                    </button>
+                </div>
             </td>
         </tr>
     </ng-template>

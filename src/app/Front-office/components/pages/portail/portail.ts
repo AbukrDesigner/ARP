@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-portail',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './portail.scss',
 })
 export class Portail {
+  constructor(private router: Router){}
 
+logIn(){
+  this.router.navigate(['/auth']);
+}
 }

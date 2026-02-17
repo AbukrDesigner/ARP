@@ -31,7 +31,6 @@
       [paginator]="true"
       [rows]="10"
       [rowsPerPageOptions]="[10, 20, 50]"
-      [tableStyle]="{ 'min-width': '60rem' }"
       [globalFilterFields]="['id', 'type', 'signalerPar', 'dateSignalement', 'status']"
       styleClass="p-datatable-sm signalements-table">
       <ng-template pTemplate="header">
@@ -41,7 +40,7 @@
           <th>SIGNALER PAR</th>
           <th style="width: 12rem">DATE</th>
           <th style="width: 10rem">STATUT</th>
-          <th style="width: 10rem" class="text-end">ACTIONS</th>
+          <th style="width: 10rem" class="text-center">ACTIONS</th>
         </tr>
       </ng-template>
 
@@ -57,23 +56,29 @@
           <td>
             <p-tag [value]="row.status" [severity]="getStatusSeverity(row.status)"></p-tag>
           </td>
-          <td class="text-end">
+          <td class="text-center">
             <div class="d-inline-flex align-items-center ">
               <p-button
                 [text]="true"
                 [rounded]="true"
+                severity="secondary"
+                styleClass="action-icon-btn"
                 icon="bi bi-eye"
                 (onClick)="onView(row)">
               </p-button>
               <p-button
                 [text]="true"
                 [rounded]="true"
+                severity="secondary"
+                styleClass="action-icon-btn"
                 icon="bi bi-pencil-square"
                 (onClick)="onEdit(row)">
               </p-button>
               <p-button
                 [text]="true"
                 [rounded]="true"
+                severity="secondary"
+                styleClass="action-icon-btn"
                 icon="bi bi-download"
                 (onClick)="onDownload(row)">
               </p-button>

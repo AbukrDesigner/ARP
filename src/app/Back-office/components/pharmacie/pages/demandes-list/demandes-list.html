@@ -31,25 +31,24 @@
     [paginator]="true"
     [rows]="10"
     [rowsPerPageOptions]="[10, 20, 50]"
-    [tableStyle]="{ 'min-width': '60rem' }"
     [globalFilterFields]="['numero', 'type', 'sousType', 'demandeur', 'dateDemande', 'status']"
     styleClass="p-datatable-sm demandes-table">
     <ng-template pTemplate="header">
       <tr>
-        <th style="width: 8rem">N° DEMANDE</th>
+        <th>N° DEMANDE</th>
         <th>TYPE DE DEMANDE</th>
         <th>DEMANDEUR</th>
-        <th style="width: 12rem">DATE DE LA DEMANDE</th>
-        <th style="width: 10rem">STATUT</th>
-        <th style="width: 10rem" class="text-end">ACTIONS</th>
+        <th>DATE DE LA DEMANDE</th>
+        <th>STATUT</th>
+        <th class="text-center">ACTIONS</th>
       </tr>
     </ng-template>
 
     <ng-template pTemplate="body" let-row>
       <tr>
-        <td class="fw-semibold">{{ row.numero }}</td>
+        <td class="fw-medium">{{ row.numero }}</td>
         <td>
-          <div class="fw-semibold">{{ row.type }}</div>
+          <div class="fw-medium">{{ row.type }}</div>
           <small class="text-muted" *ngIf="row.sousType">{{ row.sousType }}</small>
         </td>
         <td>{{ row.demandeur }}</td>
@@ -57,23 +56,29 @@
         <td>
           <p-tag [value]="row.status" [severity]="getStatusSeverity(row.status)"></p-tag>
         </td>
-        <td class="text-end">
-          <div class="d-inline-flex align-items-center gap-1">
+        <td class="text-center">
+          <div class="d-inline-flex align-items-center">
             <p-button
               [text]="true"
               [rounded]="true"
+              severity="secondary"
+              styleClass="action-icon-btn"
               icon="bi bi-eye"
               (onClick)="onView(row)">
             </p-button>
             <p-button
               [text]="true"
               [rounded]="true"
+              severity="secondary"
+              styleClass="action-icon-btn"
               icon="bi bi-pencil"
               (onClick)="onEdit(row)">
             </p-button>
             <p-button
               [text]="true"
               [rounded]="true"
+              severity="secondary"
+              styleClass="action-icon-btn"
               icon="bi bi-download"
               (onClick)="onDownload(row)">
             </p-button>

@@ -21,15 +21,34 @@
         </p>
       </div>
       <div class="main-guest-header-actions">
-        <button
-          *ngIf="showCreateDemandeButton"
-          type="button"
-          class="btn btn-light btn-md me-2"
-          (click)="goToDemandeCreate()"
-        >
-          <i class="bi bi-plus"></i>
-          Nouvelle demande
-        </button>
+        <!-- <div class="dropdown">
+          <button class="btn btn-light btn-md me-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Nouvelle demande
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="javascript:(0)" (click)="goToDemandeCreate()">Demande de transfert</a></li>
+            <li><a class="dropdown-item" href="javascript:(0)">Demande d'attribution de site</a></li>
+            <li><a class="dropdown-item" href="javascript:(0)">Demande de variation</a></li>
+          </ul>
+        </div> -->
+
+        <div class="dropdown" *ngIf="showCreateDemandeButton">
+          <button
+            class="btn btn-light btn-md me-2"
+            type="button"
+            (click)="openNewDemandeModal()"
+          >
+            <i class="bi bi-plus"></i>
+            Nouvelle demande
+          </button>
+          <!-- <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="javascript:(0)" (click)="goToDemandeCreate()">Demande de transfert</a></li>
+            <li><a class="dropdown-item" href="javascript:(0)">Demande d'attribution de site</a></li>
+            <li><a class="dropdown-item" href="javascript:(0)">Demande de variation</a></li>
+          </ul> -->
+        </div>
+        
         <button
           *ngIf="showCreateSignalementButton"
           type="button"
@@ -59,6 +78,55 @@
         </button>
       </div>
     </header>
+
+    <p-dialog
+      [(visible)]="displayNewDemandeModal"
+      [modal]="true"
+      [draggable]="false"
+      [resizable]="false"
+      [dismissableMask]="true"
+      [style]="{ width: '720px', maxWidth: '95vw' }"
+      [breakpoints]="{ '960px': '80vw', '640px': '95vw' }"
+      contentStyleClass="new-demande-dialog-content"
+    >
+      <ng-template pTemplate="header">
+        <div class="new-demande-header">
+          <h2>Quelle Demande Voulez Vous Faire ?</h2>
+          <p>Veuillez sélectionnez la demande que vous voulez initier</p>
+        </div>
+      </ng-template>
+
+      <div class="new-demande-options">
+        <button
+          type="button"
+          class="new-demande-card"
+          (click)="onDemandeTransfert()"
+          pRipple
+        >
+          <span class="new-demande-card-title">Demande De Transfert</span>
+        </button>
+
+        <button
+          type="button"
+          class="new-demande-card"
+          (click)="onDemandeAttributionSite()"
+          pRipple
+        >
+          <span class="new-demande-card-title">
+            Demande D’attribution De Site D’officine
+          </span>
+        </button>
+
+        <button
+          type="button"
+          class="new-demande-card"
+          (click)="onDemandeVariation()"
+          pRipple
+        >
+          <span class="new-demande-card-title">Demande De Variation</span>
+        </button>
+      </div>
+    </p-dialog>
 
     <main class="main-guest-content">
       <div class="container-fluid p-0">

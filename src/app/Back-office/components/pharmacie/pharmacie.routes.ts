@@ -1,7 +1,6 @@
 import { Routes } from "@angular/router";
 import { MainGuest } from "../../../shared/layouts/main-guest/main-guest";
 import { Dashboard } from "./pages/dashboardp/dashboard";
-import { DemandeCreate } from "../chercheur/pages/demande-create/demande-create";
 import { DemandesCreate } from "./pages/demandes-create/demandes-create";
 import { DemandesList } from "./pages/demandes-list/demandes-list";
 import { GestionStock } from "./pages/gestion-stock/gestion-stock";

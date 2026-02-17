@@ -1,0 +1,65 @@
+// Alignement et largeur minimale du champ de recherche
+.signalements-list {
+  .search-wrap {
+    min-width: 260px;
+  }
+}
+
+// Largeur minimale du select de filtre
+:host ::ng-deep .filter-select {
+  min-width: 220px;
+}
+
+// Styles du tableau des signalements (même logique que demandes-list)
+:host ::ng-deep .signalements-table .p-datatable-thead > tr > th {
+  background-color: #f5f6fa !important;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.85rem; // taille "normale" pour desktop
+  font-weight: 700;
+  color: #2b2f38;
+  white-space: nowrap;
+}
+
+:host ::ng-deep .signalements-table .p-datatable-tbody > tr > td {
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+// Pagination sans bordure
+:host ::ng-deep .signalements-table .p-paginator {
+  border: none;
+}
+
+// Version "compacte" uniquement pour les écrans plus petits
+@media (max-width: 1199.98px) {
+  :host ::ng-deep .signalements-table .p-datatable-thead > tr > th {
+    font-size: 0.80rem;
+  }
+
+  :host ::ng-deep .signalements-table .p-datatable-tbody > tr > td {
+    font-size: 0.85rem;
+  }
+}
+
+// Sur les grands écrans (desktop), on garde la largeur minimale d'avant
+@media (min-width: 1200px) {
+  :host ::ng-deep .signalements-table .p-datatable-wrapper {
+    min-width: 60rem;
+  }
+}
+
+// Icônes d'action gris neutre (pas de vert)
+.action-icon-btn.p-button {
+  color: #6b7280;
+}
+
+:host ::ng-deep .signalements-table .action-icon-btn .p-button-icon,
+:host ::ng-deep .signalements-table .action-icon-btn.p-button {
+  color: #6b7280;
+}
+
+:host ::ng-deep .signalements-table .action-icon-btn.p-button:hover {
+  color: #111827;
+}
+

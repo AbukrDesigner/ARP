@@ -1,12 +1,36 @@
-//background-color et couleur de texte pour les th du tableau
+// background-color et couleur de texte pour les th du tableau
 .th-title{
     background-color: #EEEEEE;
     color: #111827;
 }
 
+// Taille de police plus petite + alignement vertical
+// Sans toucher aux bordures (on laisse le style par défaut du tableau)
+:host ::ng-deep .p-datatable-sm .p-datatable-thead > tr > th {
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+:host ::ng-deep .p-datatable-sm .p-datatable-tbody > tr > td {
+    font-size: 0.875rem;
+    vertical-align: middle;
+}
+
+.actions-cell {
+    white-space: nowrap;
+}
+
 // léger fond au survol des icônes d'actions
 .amm-actions-btn {
     border-radius: 999px;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 
     &:hover {
         background-color: #F3F4F6; // gris très léger
